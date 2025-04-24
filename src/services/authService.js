@@ -11,7 +11,6 @@ export async function login(authDetail) {
 
     if (data.accessToken) {
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-        sessionStorage.setItem("cbid", JSON.stringify(data.user.id));
     }
 
     return data;

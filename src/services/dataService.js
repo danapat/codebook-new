@@ -1,6 +1,9 @@
+import { jwtDecode } from "jwt-decode";
+
 function getSession() {
     const token = JSON.parse(sessionStorage.getItem("token"));
-    const cbid = JSON.parse(sessionStorage.getItem("cbid"));
+    const decodedToken = jwtDecode(token); // so sieht eine decoded token aus: {email: 'bla@bla.com', iat: 1745521663, exp: 1745525263, sub: '3'}
+    const cbid = JSON.parse(decodedToken.sub);
     if (!token || !cbid) {
         throw new Error("Session data is missing. Please log in again.");
     }
