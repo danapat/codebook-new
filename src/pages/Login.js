@@ -25,10 +25,15 @@ export const Login = () => {
   }
 
   async function handleLoginGuest() {
+
+    email.current.value = "someone@gmail.com";
+    password.current.value = "learnreact";
     try {
-      email.current.value = "someone@gmail.com";
-      password.current.value = "learnreact";
-      const data = await login({ email: email.current.value, password: password.current.value });
+      const authDetail = {
+        email: email.current.value,
+        password: password.current.value
+      }
+      const data = await login(authDetail);
       data.accessToken ? navigate("/products") : toast.error(data);
     } catch (error) {
       toast.error(error.message);
