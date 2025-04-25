@@ -1,13 +1,13 @@
 export async function login(authDetail) {
     const requestOptions = {
         method: "POST",
-        headers: { "content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(authDetail)
     }
     const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
 
     const data = await response.json();
-
+    console.log("Login response data:", data); 
     if (data.accessToken) {
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
     }
