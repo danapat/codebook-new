@@ -266,10 +266,16 @@
   ],
   "users": [
     {
+      "email": "someone@gmail.com",
+      "password": "$2y$10$g.hq1y3lgUwuYXTy8NVmyO9QjULFp7dFwyiEp4XoQkJdLtnj8zDwq",
+      "name": "Guest",
+      "id": 1
+    },
+    {
       "email": "aaa@gmail.com",
       "password": "$2a$10$f9qPsm6DEgqHcrtpD/e4n.nQoyz7T6/95hYH7GfCVb9rkZHEdSE8G",
       "name": "aaa",
-      "id": 1
+      "id": 2
     }
   ]
 }
